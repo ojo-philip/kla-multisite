@@ -1,0 +1,6 @@
+{% load static %}
+    <form action="." method="post">
+    {% csrf_token %}
+        {{ form.as_p }}
+        <button><i class="fas fa-envelope"></i> send message</button>
+      </form>

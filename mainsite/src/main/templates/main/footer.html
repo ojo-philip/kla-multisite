@@ -1,0 +1,64 @@
+
+{% load klatags %}
+  <footer class="footer">
+    <article class="footer-items">
+      <div class="footer-contact">
+        <div class="contact-us">
+          <div class="footer-head">
+            <h3>contact us</h3>
+            <div class="footer-underline"></div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-address-book"></i>
+            <p>E44, Alexander Brown Hall, Ibadan</p> 
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i> 
+            <p>+2348163482948</p>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:kingdomleads2021@gmail.com">kingdomleads2021@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-form">
+          {% contact_tag request %}
+        </div>
+        <div class="footer-menu">
+          <div class="footer-head">
+            <h3>Navigate the Site</h3>
+            <div class="footer-underline"></div>
+          </div>
+          <ul class="footer-links">
+          <li><a href="{% url 'main:home_page' %}">home</a></li>
+          <li><a href="{% url 'main:about_page' %}">about us</a></li>
+          <li><a href="{% url 'main:our_executives' %}">meet the executives</a></li>
+          <li><a href="{% url 'main:programs_page' %}">our programs</a></li>
+          <li><a href="{% url 'membership:application_form' %}">become a member</a></li>
+          <li><a href="{% url 'main:donation_page' %}">donation/partnership</a></li>
+          <li><a href="{% url 'blog:post_list' %}">blog</a></li>
+        </ul>
+        </div>
+      </div>
+    </article>
+
+    <article class="footer-note">
+      <div class="footer-icons">
+          <div class="footer-icon">
+            <a href="https://www.facebook.com/100076501002706"><i class="fab fa-facebook"></i></a>
+          </div>
+          <div class="footer-icon">
+            <a href="https://twitter.com/kingdomleads"><i class="fab fa-twitter"></i></a>
+          </div>
+          <div class="footer-icon">
+            <a href="https://www.instagram.com/kingdomleadsafrica"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-right">
+          <p>&copy; <span class="footer-date"></span> Kingdom Leads Africa. all right reserved</p>
+        </div>
+        <div class="designer">
+          <p>site designed by <a href="https://twitter.com/Odeniyiojo">Heritage web dev</a></p>
+        </div>
+    </article>
+  </footer>

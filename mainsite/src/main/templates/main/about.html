@@ -1,0 +1,67 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+    <section class="about-page">
+    <div class="section-head">
+      <h1>About Us</h1>
+      <div class="section-underline"></div>
+    </div>
+      <br>
+      <p>KLA, a pro leadership non profit organization that is founded to equip high school leavers and fresh students of tertiary institutions with true leadership skills through her various life changing conferences, summits, fellowships and SDG oriented social impact projects.</p>
+    <div class="about-center">
+        <article class="about-img" data-aos="fade-right" data-aos-duration="2000">
+          <img src="{% static 'main/img/images (5).png' %}" alt="" />
+        </article>
+        <article class="about">
+          <!-- btn container -->
+          <div class="btn-container">
+            <button class="tab-btn active" data-id="vision">vision</button>
+            <button class="tab-btn" data-id="mission">mission</button>
+            <button class="tab-btn" data-id="values">values</button>
+          </div>
+          <div class="about-content">
+            <!-- single item --> 
+            <div class="content active" id="vision">
+              <h4>vision</h4>
+              <p>
+                To be the foremost international, pro leadership and non-profit organisation that transforms African youths into true leaders.
+              </p>
+            </div>
+            <!-- end of single item -->
+            <!-- single item -->
+            <div class="content" id="mission">
+              <h4>mission</h4>
+              <ul>
+                <li>To admit fresh tertiary students as fellows of the Freshire Campus Fellowship every yea</li>
+                <li>To admit senior secondary/high school students as fellows of the Highsphire Network of Promising Leaders every year</li>
+                <li>To provide lifetime mentorship in all aspects of life for every HNPL and FCF fellows.</li>
+                <li>To make leaders relevant throughout their lifetime by providing mentorship to younger leaders</li>
+                <li>To positively impact the world via problem solving innovations and societal-improvement fellowship projects executed by fellows</li>
+                <li>Ultimately, to develop and coach leaders that will respond effectively to political, business, spiritual, financial and educational problems of their families, communities and nations.</li>
+              </ul>
+            </div>
+            <!-- end of single item -->
+            <!-- single item -->
+            <div class="content" id="values">
+              <h4>values</h4>
+              <ul>
+                <li>Absolute faith in God </li>
+                <li>Genuine love for People</li>
+                <li>Deep selflessness</li>
+                <li>Complete self mastery </li>
+                <li>Exceptional knowledge & wisdom </li>
+                <li>Excellent creativity & Innovation</li>
+                <li>Clear vision </li>
+                <li>Outstanding Courage</li>
+                <li>Great ability to Influence</li>
+                <li>Premium value on relationships</li>
+                <li>Effective Communication</li>
+                <li>Great sense of timeliness</li>
+              </ul>
+            </div>
+            <!-- end of single item -->
+          </div>
+        </article>
+      </div>
+  </section>
+{% endblock content %}

@@ -1,0 +1,31 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+  <section class="section form-center">
+    <div class="section-head">
+      <h3>You want to become a member? kindly register below</h3>
+      <div class="section-underline"></div>
+    </div>
+      <br>
+      <p>KLA, a pro leadership non-profit organization that is founded to promote the quality of true leadership in Africa by engaging her youth through life transforming fellowship events, SDG oriented social impact projects and mentorship program.</p>
+      <br>
+      <p>NOTE THAT MEMBERSHIP IS ONLY OPEN TO STUDENTS IN TERTIARY INSTITUTIONS AND GRADUATES OF TERTIARY INSTITUTIONS.</p>
+      <br>
+      <div class="blog-detail">
+      <ul>
+        <li>Members are entitled to ID Cards of membership after registering as a member</li>
+        <li>Members can voluntarily terminate their membership role, However, this must be done appropriately through the office of human resource director</li>
+        <li>The basic requirements that all members must fulfil to retain their membership include attendance at meetings and execution of tasks assigned. </li>
+        <li>Members are directly responsible to their directors </li>
+      </ul>
+      </div>
+      <div class="form-container">
+        <form action="." method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button class="form-btn">Submit</button>
+        </form>
+      </div>
+  </section>
+
+{% endblock content %}

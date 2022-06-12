@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kingdom Leads Africa Executives Page</title>
+  <link rel="stylesheet" href="{% static 'mainapp/css/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'mainapp/fontawesome-free-5.7.2-web 2/css/all.css' %}">
+  <link rel="stylesheet" href="{% static 'mainapp/css/owlcarousel/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="{% static 'mainapp/css/aos.css' %}">
+  <link rel="stylesheet" href="{% static 'mainapp/css/magnific-popup.css' %}">
+</head>
+<body>
+  {% include "mainapp/nav.html" %}
+  {% if messages %} 
+    {% for message in messages %}
+    <div class="section form-center">
+      <p class="messages-{{message.tags}}">
+      {{ message }}</p>
+    </div>
+        {% endfor %} 
+        {% endif %} 
+  {% block content %}
+  
+  {% endblock content %}
+  {% include "mainapp/footer.html" %}
+  
+  <script src="{% static 'mainapp/js/scripts.js' %}"></script>
+  <script src="{% static 'mainapp/js/googlejquery.js' %}"></script>
+  <script src="{% static 'mainapp/js/owlcarousel/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'mainapp/js/owlcarousel/owl.autoplay.js' %}"></script>
+  <script src="{% static 'mainapp/js/aos.js' %}"></script>
+  <script src="{% static 'mainapp/js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'mainapp/js/utility.js' %}"></script>
+  <script src="{% static 'mainapp/js/magnific.js' %}"></script>
+  <script>
+    AOS.init()
+  </script>
+</body>
+</html>

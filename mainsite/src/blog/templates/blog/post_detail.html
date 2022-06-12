@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+   <section class="section">
+      <div class="post-center">
+            <!-- single blog -->
+        <article class="single-post">
+          <div class="post-img-container">
+              <img src="{{ post.image.url }}" alt="">
+          </div>
+          <div class="post-info">
+              <h2>{{ post.title }}</h2>
+            <div class="blog-detail">
+              {{ post.content|safe }}
+            </div>
+          </div>
+        </article>
+        <!-- end of single blog -->
+      </div>
+  </section>
+{% endblock content %}

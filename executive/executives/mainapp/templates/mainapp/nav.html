@@ -1,0 +1,51 @@
+{% load static %}
+{% url 'main:home_page' as home %}
+{% url 'main:our_executives' as executives %}
+{% url 'main:about_page' as about %}
+{% url 'main:programs_page' as programs %}
+{% url 'main:donation_page' as donation %}
+{% url 'membership:application_form' as membership %}
+{% url 'blog:post_list' as blog %}
+<header>
+    <nav class="nav-bar">
+      <div class="nav-top">
+        <div class="nav-logo">
+          <a href="https://www.kingdomleadsafrica.org">
+            <img src="{% static 'mainapp/img/logo.png' %}" alt="my logo">
+          </a>
+        </div>
+        <div class="nav-btn">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+      <div class="nav-contents">
+        <ul class="nav-links">
+          <li class="{% if request.path == home %} active-nav {% endif %}"><a href="https://www.kingdomleadsafrica.org" class="nav-link">home</a></li>
+          <li class="{% if request.path == about %} active-nav {% endif %}"><a href="https://www.kingdomleadsafrica.org/about-us" class="nav-link">about us</a></li>
+          <li class="{% if request.path == executives %} active-nav {% endif %}"><a href="https://www.kingdomleadsafrica.org/our-executives" class="nav-link">meet the executives</a></li>
+          <li class="{% if request.path == programs %} active-nav {% endif %}"><a href="https://www.kingdomleadsafrica.org/programs" class="nav-link">our programs</a></li>
+          <li class="{% if request.path == membership %} active-nav {% endif %}"><a href="https://www.kingdomleadsafrica.org/membership" class="nav-link">become a member</a></li>
+          <li class="{% if request.path == donation %} active-nav {% endif %}"><a href="https://www.kingdomleadsafrica.org/donation" class="nav-link">donation/partnership</a></li>
+          <li class="{% if request.path == blog %} active-nav {% endif %}"><a href="https://www.kingdomleadsafrica.org/blog" class="nav-link">blog</a></li>
+            {% comment %} {% if user.is_authenticated %}
+          <li><a href="{% url 'account_logout' %}" class="nav-link">logout</a></li>
+          {% else %}
+          <li><a href="{% url 'account_login' %}" class="nav-link">login</a></li>
+          {% endif %} {% endcomment %}
+          {% comment %} <li><a href="{% url 'main:home_page' %}" class="nav-link">home</a></li>
+          <li><a href="{% url 'main:about_page' %}" class="nav-link">about us</a></li>
+          <li><a href="{% url 'main:our_executives' %}" class="nav-link">meet the executives</a></li>
+          <li><a href="{% url 'main:programs_page' %}" class="nav-link">our programs</a></li>
+          <li><a href="{% url 'membership:application_form' %}" class="nav-link">become a member</a></li>
+          <li><a href="{% url 'main:donation_page' %}" class="nav-link">donation/partnership</a></li>
+          <li><a href="{% url 'blog:post_list' %}" class="nav-link">blog</a></li>
+            {% if user.is_authenticated %}
+          <li><a href="{% url 'account_logout' %}" class="nav-link">logout</a></li>
+          {% else %}
+          <li><a href="{% url 'account_login' %}" class="nav-link">login</a></li>
+          {% endif %} {% endcomment %}
+
+        </ul>
+      </div>
+    </nav>
+  </header>

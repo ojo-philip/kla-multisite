@@ -1,0 +1,160 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+{% include "main/banner.html" %}
+  <section class="vision section">
+    <article class="vision-words">
+      <div class="section-head">
+          <h1>Our Vision</h1>
+          <div class="section-underline"></div>
+        </div>
+        <div class="section-container">
+          <div class="section-img section-info" data-aos="flip-up" data-aos-duration="2000">
+            <img src="{% static 'main/img/binoculars-g4c21f6071_1920.jpg' %}" alt="">
+          </div>
+          <div class="section-word section-info">
+            <p>To be the foremost international, pro leadership and non-profit organisation that transforms dependent youths into dependable leaders.</p>
+            <a href="{% url 'main:about_page' %}" class="readmore-btn">Read More</a>
+          </div>
+        </div>
+    </article>
+  </section>
+  <section class="mission-center section">
+      <article class="mission-words">
+        <div class="section-head">
+          <h1>Our Mission</h1>
+          <div class="section-underline"></div>
+        </div>
+        <div class="section-container" >
+          <div class="section-img section-info" data-aos="fade-up" data-aos-duration="2000">
+            <img src="{% static 'main/img/images (5).png' %}" alt="">
+          </div>
+          <div class="missions section-info">
+                <!-- single mission -->
+          <article class="mission show-text">
+            <!-- mission title -->
+            <div class="mission-title">
+              <p>Our mission is </p>
+              <button type="button" class="mission-btn">
+                <span class="plus-icon">
+                  <i class="far fa-plus-square"></i>
+                </span>
+                <span class="minus-icon">
+                  <i class="far fa-minus-square"></i>
+                </span>
+              </button>
+            </div>
+            <!-- mission text -->
+            <div class="mission-text">
+              <ol>
+                <li>To admit fresh tertiary students as fellows of the Freshire Campus Fellowship every year</li>
+                <li>To admit senior secondary/high school students as fellows of the Highsphire Network of Promising Leaders every year</li>
+                <li>To provide lifetime mentorship in all aspects of life for every HNPL and FCF fellows.</li>
+                <p><a href="{% url 'main:about_page' %}" class="readmore-btn">Read More<a></p>
+              </ol>
+            </div>
+          </article>
+          <!-- end of single mission -->
+          </div>
+        </div>
+    </article>
+  </section>
+  <section class="section events">
+    <div class="section-head">
+      <h1>Upcoming Events</h1>
+      <div class="section-underline"></div>
+    </div>
+    <article class="events-center owl-carousel owl-theme">
+    {% for event in events %}
+    
+      <!-- sigle event -->
+      <div class="event-card">
+        <div class="event-img-container">
+          <img src="{{event.image.url}}" alt="" class="event-img">
+        </div>
+        <div class="event-info">
+          <div class="event-title">
+            <div class="">
+              <i class="fas fa-calendar"></i>
+            </div>
+            <h1>{{event.title}}</h1>
+          </div>
+          <div class="event-details">
+            <p>{{event.details|truncatewords:50}}</p>
+          </div>
+          <div class="event-date">
+            <p>{{event.date}}</p>
+          </div>
+        </div>
+      </div>
+      <!-- end of single event -->
+    {% endfor %}
+    </article>
+  </section>
+  <section class="section gallery">
+    <div class="section-head">
+      <h1>our gallery</h1>
+      <div class="section-underline"></div>
+    </div>
+    <br>
+    <p>Click the picture to expand</p>
+    <div class="gallery-container owl-carousel owl-theme">
+      <!-- single gallery image -->
+      <article class="gallery-item">
+        <a href="{% static 'main/img/gallery 1.jpg' %}"><img src="{% static 'main/img/gallery 1.jpg' %}" alt=""></a>
+      </article>
+      <!-- end of single gallery img -->
+      <!-- single gallery image -->
+      <article class="gallery-item">
+        <a href="{% static 'main/img/gallery 2.jpg' %}"><img src="{% static 'main/img/gallery 2.jpg' %}" alt=""></a>
+      </article>
+      <!-- end of single gallery img -->
+      <!-- single gallery image -->
+      <article class="gallery-item">
+        <a href="{% static 'main/img/gallery 3.jpg' %}"><img src="{% static 'main/img/gallery 3.jpg' %}" alt=""></a>
+      </article>
+      <!-- end of single gallery img -->
+      <!-- single gallery image -->
+      <article class="gallery-item">
+        <a href="{% static 'main/img/gallery 4.jpg' %}"><img src="{% static 'main/img/gallery 4.jpg' %}" alt=""></a>
+      </article>
+      <!-- end of single gallery img -->
+      <!-- single gallery image -->
+      <article class="gallery-item">
+        <a href="{% static 'main/img/gallery 5.jpg' %}"><img src="{% static 'main/img/gallery 5.jpg' %}" alt=""></a>
+      </article>
+      <!-- end of single gallery img -->
+
+    </div>
+  </section>
+  <section class="section events">
+    <div class="section-head">
+      <h1>Latest Posts</h1>
+      <div class="section-underline"></div>
+    </div>
+    <article class="post-center-container owl-carousel owl-theme">
+    {% for post in posts %}
+    
+      <!-- sigle event -->
+      <div class="event-card">
+        <div class="event-img-container">
+          <a href="{{ post.get_absolute_url }}"><img src="{{post.image.url}}" alt="" class="event-img"></a>
+        </div>
+        <div class="event-info">
+          <div class="event-title">
+            <a href="{{ post.get_absolute_url }}"><h1>{{post.title}}</h1></a>
+          </div>
+          <div class="event-details">
+            <p>{{post.content|safe|truncatewords:30}}</p>
+            <a href="{{ post.get_absolute_url }}" class="readmore-btn">Read More</a>
+          </div>
+          <div class="event-date">
+            <p>{{post.date}}</p>
+          </div>
+        </div>
+      </div>
+      <!-- end of single event -->
+    {% endfor %}
+    </article>
+  </section>
+{% endblock content %}

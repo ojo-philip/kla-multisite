@@ -1,0 +1,20 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block content %}
+  <section class="section form-center">
+    <div class="section-head">
+      <h3>DIRECTORATE'S QUARTERLY EVALUATION FORM</h3>
+      <div class="section-underline"></div>
+    </div>
+    <p>To be filled every three month. </p>
+      <br>
+      <div class="form-container">
+        <form action="." method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button class="form-btn">Submit</button>
+        </form>
+      </div>
+  </section>
+
+{% endblock content %}

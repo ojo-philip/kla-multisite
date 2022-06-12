@@ -1,0 +1,33 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+  <section class="section">
+    <div class="section-head">
+      <h3>Learn from our wealth of knowledge</h3>
+      <div class="section-underline"></div>
+    </div>
+      <br>
+      <div class="blog-center">
+          {% for post in posts %}
+            <!-- single blog -->
+        <article class="single-blog">
+          <div class="blog-img-container">
+            <a href="{{ post.get_absolute_url }}">
+              <img src="{{ post.image.url }}" alt="">
+              <p>{{ post.title }}</p>
+            </a>
+          </div>
+          <div class="blog-info">
+            <a href="{{ post.get_absolute_url }}">
+              {{ post.title }}
+            </a>
+            <div class="blog-detail">
+              <p>{{ post.content|safe|truncatewords:30 }}</p>
+            </div>
+          </div>
+        </article>
+        <!-- end of single blog -->
+  {% endfor %}
+      </div>
+  </section>
+{% endblock content %}
